@@ -4,23 +4,81 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>Mock Tool Store (test double)</title>
+  <meta name="description" content="Mock tool store: a test double for LeBrain workflow runs.">
+  <title>Forge &amp; Bolt · Tools for every workshop (mock store)</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l12 7v14l-12 7-12-7V9z' fill='%23e4572e'/%3E%3Cpath d='M17 8l-6 10h5l-1 6 6-10h-5z' fill='%23fff'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="notice" data-test="notification-bar">
-    Test double for LeBrain workflow runs. Not a real shop, not affiliated with any store. No orders, no accounts, no payments.
+    Demo store for automated tests (LeBrain). Not a real shop: no orders, no accounts, no payments.
   </div>
-  <header class="navbar">
-    <a class="brand" href="#/" data-test="nav-brand">Mock Tool Store</a>
-    <nav>
-      <a href="#/" data-test="nav-home">Home</a>
-      <a href="#/checkout" data-test="nav-cart">Cart <span class="badge" data-test="cart-quantity">0</span></a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#/" aria-label="Forge &amp; Bolt home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l12 7v14l-12 7-12-7V9z" fill="#e4572e"/><path d="M17 8l-6 10h5l-1 6 6-10h-5z" fill="#fff"/></svg>
+        <span>Forge<b>&amp;</b>Bolt</span>
+      </a>
+      <form class="header-search" id="search-form" role="search" data-test="search-form">
+        <input id="search-query" type="search" placeholder="Search tools, brands, categories…" autocomplete="off" aria-label="Search" data-test="search-query">
+        <button type="submit" data-test="search-submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span>Search</span>
+        </button>
+      </form>
+      <div class="header-actions">
+        <a href="#/account" class="hdr-link" data-test="nav-sign-in">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Account</span>
+        </a>
+        <a href="#/checkout" class="hdr-link cart-link" data-test="nav-cart" aria-label="Cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2.5l2.2 11h10.6L21 7H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.6" fill="currentColor"/><circle cx="17" cy="19.5" r="1.6" fill="currentColor"/></svg>
+          <span>Cart</span>
+          <span class="badge" data-test="cart-quantity">0</span>
+        </a>
+      </div>
+    </div>
+    <nav class="cat-nav" aria-label="Categories">
+      <div class="cat-nav-inner">
+        <a href="#/" data-test="nav-home">Home</a>
+        <a href="#/category/hand-tools" data-test="nav-hand-tools">Hand Tools</a>
+        <a href="#/category/power-tools" data-test="nav-power-tools">Power Tools</a>
+        <a href="#/category/measures" data-test="nav-measures">Measuring</a>
+        <a href="#/category/safety-gear" data-test="nav-safety">Safety Gear</a>
+        <a href="#/category/fasteners" data-test="nav-fasteners">Fasteners</a>
+        <a href="#/category/storage" data-test="nav-storage">Storage &amp; Workbenches</a>
+        <a href="#/deals" class="deal-link" data-test="nav-deals">Deals</a>
+      </div>
     </nav>
   </header>
-  <main id="app" class="container"></main>
-  <footer class="footer">Static mock: the cart lives in this browser only (localStorage).</footer>
+
+  <main id="app"></main>
+
+  <section class="perks" aria-label="Store benefits">
+    <div><b>Free delivery</b><span>on orders over $75</span></div>
+    <div><b>30-day returns</b><span>no questions asked</span></div>
+    <div><b>2-year warranty</b><span>on every power tool</span></div>
+    <div><b>Expert support</b><span>Mon–Sat, 8am–6pm</span></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="logo small"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l12 7v14l-12 7-12-7V9z" fill="#e4572e"/><path d="M17 8l-6 10h5l-1 6 6-10h-5z" fill="#fff"/></svg><span>Forge<b>&amp;</b>Bolt</span></div>
+        <p>Tools for every workshop. This is a static demo store used as a test target for automated workflows.</p>
+      </div>
+      <div><h4>Shop</h4><a href="#/category/hand-tools">Hand tools</a><a href="#/category/power-tools">Power tools</a><a href="#/category/safety-gear">Safety gear</a><a href="#/deals">Deals</a></div>
+      <div><h4>Help</h4><a href="#/help">Delivery</a><a href="#/help">Returns</a><a href="#/help">Warranty</a><a href="#/help">Contact</a></div>
+      <div><h4>About this demo</h4><p>The cart lives in your browser only. Products, prices and reviews are sample data.</p></div>
+    </div>
+    <div class="footer-bottom">© Forge &amp; Bolt demo store · Not a real business</div>
+  </footer>
+
+  <div class="toasts" aria-live="polite"></div>
+
   <script src="products.js"></script>
+  <script src="art.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,6 +1,13 @@
-# Mock Tool Store
+# Forge & Bolt (mock tool store)
 
-A static test double for the LeBrain workflow "[AE] - New Sales Order Processing Automation".
+A static test double for the LeBrain workflow "[AE] - New Sales Order Processing Automation",
+styled like a real online tool shop: home page with hero and categories, search with filters and
+sorting, product pages with gallery, rating, specs and related products, and a cart with an order
+summary. Product images are original SVG illustrations drawn in `art.js` (no external images).
+Brands, ratings, reviews and promotions are sample data.
+
+Every selector the workflow uses appears exactly once per page (Playwright's strict mode), and
+`a.card` is used only for product cards.
 
 The workflow was written against a public practice shop that now puts a bot check in front of the
 platform's browsers, so runs on the "Platform" browser target can't get past the home page. This
