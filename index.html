@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Mock Tool Store (test double)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="notice" data-test="notification-bar">
+    Test double for LeBrain workflow runs. Not a real shop, not affiliated with any store. No orders, no accounts, no payments.
+  </div>
+  <header class="navbar">
+    <a class="brand" href="#/" data-test="nav-brand">Mock Tool Store</a>
+    <nav>
+      <a href="#/" data-test="nav-home">Home</a>
+      <a href="#/checkout" data-test="nav-cart">Cart <span class="badge" data-test="cart-quantity">0</span></a>
+    </nav>
+  </header>
+  <main id="app" class="container"></main>
+  <footer class="footer">Static mock: the cart lives in this browser only (localStorage).</footer>
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
